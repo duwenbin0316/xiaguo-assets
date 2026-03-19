@@ -7,7 +7,16 @@ body{background:#000;display:flex;justify-content:center;align-items:center;min-
 video{width:100%;max-height:100vh;object-fit:contain;}
 </style></head>
 <body>
-<video autoplay loop muted playsinline>
+<video controls autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5">
 <source src="tesla_model3.mp4" type="video/mp4">
 </video>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var v = document.querySelector('video');
+  v.play().catch(function(){});
+  document.body.addEventListener('touchstart', function(){
+    v.play().catch(function(){});
+  }, {once: true});
+});
+</script>
 </body></html>
